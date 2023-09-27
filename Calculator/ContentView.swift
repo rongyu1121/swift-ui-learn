@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    let row: [CalculatorButtonItem] = [
+        .digit(1), .digit(2), .digit(3), .op(.plus)
+    ]
     var body: some View {
         HStack {
             CalculatorButton(title: "1", size: CGSize(width: 88, height: 88), backgroundColorName: "digitBackground") {
