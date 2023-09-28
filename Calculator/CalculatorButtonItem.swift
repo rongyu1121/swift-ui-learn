@@ -26,7 +26,7 @@ enum CalculatorButtonItem {
     case command(Command)
 }
 
-extension CalculatorButtonItem {
+extension CalculatorButtonItem: Hashable {
     var title: String {
         switch self {
             case .digit(let val): return String(val)
@@ -36,7 +36,10 @@ extension CalculatorButtonItem {
         }
     }
     var size: CGSize {
-        CGSize(width: 88, height: 88)
+        if case .digit(let value) = self, value == 0 {
+            return CGSize(width: 88 * 2 + 8, height: 88)
+        }
+        return CGSize(width: 88, height: 88)
     }
     var backgroundColorName: String {
         switch self {
