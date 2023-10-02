@@ -11,20 +11,23 @@ let scale = UIScreen.main.bounds.size.width / 414
 
 struct ContentView: View {
     
-    @State private var brain: CalculatorBrain = .left("0")
-    
+//    @State private var brain: CalculatorBrain = .left("0")
+    @ObservedObject var model = CalculatorModel()
     var body: some View {
         VStack(spacing: 12, content: {
             Spacer()
-            Text(brain.output)
+            Button("操作履历：\(model.history.count)") {
+                print(self.model.history)
+            }
+            Text(model.brain.output)
                 .font(.system(size: 76))
                 .minimumScaleFactor(0.5)
                 .padding(.trailing, 24 * scale)
                 .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxWidth: .infinity, alignment: .trailing)
-            Button("Test") {
-                self.brain = .left("1.23")
-            }
-            CalculatorButtonPad(brain: $brain).padding(.bottom)
+//            Button("Test") {
+//                self.brain = .left("1.23")
+//            }
+            CalculatorButtonPad(model: model).padding(.bottom)
         })
     }
 }
@@ -50,7 +53,8 @@ struct CalculatorButton: View {
 }
 
 struct CalculatorButtonRow: View {
-    @Binding var brain: CalculatorBrain
+//    @Binding var brain: CalculatorBrain
+    var model: CalculatorModel
     let row: [CalculatorButtonItem]
     var body: some View {
         HStack {
@@ -60,7 +64,8 @@ struct CalculatorButtonRow: View {
                     size: item.size,
                     backgroundColorName: item.backgroundColorName,
                     foregroundColor: item.foregroundColor) {
-                        self.brain = self.brain.apply(item: item)
+//                        self.brain = self.brain.apply(item: item)
+                        self.model.apply(item)
                 }
             }
         }
@@ -68,7 +73,8 @@ struct CalculatorButtonRow: View {
 }
 
 struct CalculatorButtonPad: View {
-    @Binding var brain: CalculatorBrain
+//    @Binding var brain: CalculatorBrain
+    var model: CalculatorModel
     let pad: [[CalculatorButtonItem]] = [
         [.command(.clear), .command(.flip), .command(.percent), .op(.divide)],
         [.digit(7), .digit(8), .digit(9), .op(.multiply)],
@@ -79,7 +85,7 @@ struct CalculatorButtonPad: View {
     var body: some View {
         VStack(spacing: 8, content: {
             ForEach(pad, id: \.self) { row in
-                CalculatorButtonRow(brain: self.$brain, row: row)
+                CalculatorButtonRow(model: model, row: row)
             }
         })
     }

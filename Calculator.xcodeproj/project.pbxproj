@@ -13,6 +13,7 @@
 		F17B9AD22AC4543400EF77AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F17B9AD12AC4543400EF77AD /* Preview Assets.xcassets */; };
 		F17B9AD92AC4757B00EF77AD /* CalculatorButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17B9AD82AC4757B00EF77AD /* CalculatorButtonItem.swift */; };
 		F1F7681E2ACADB92005C46EC /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F7681D2ACADB92005C46EC /* CalculatorBrain.swift */; };
+		F1F768202ACB0B47005C46EC /* CalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F7681F2ACB0B47005C46EC /* CalculatorModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		F17B9AD12AC4543400EF77AD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F17B9AD82AC4757B00EF77AD /* CalculatorButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonItem.swift; sourceTree = "<group>"; };
 		F1F7681D2ACADB92005C46EC /* CalculatorBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
+		F1F7681F2ACB0B47005C46EC /* CalculatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				F1F7681D2ACADB92005C46EC /* CalculatorBrain.swift */,
 				F17B9ACC2AC4543200EF77AD /* ContentView.swift */,
 				F17B9AD82AC4757B00EF77AD /* CalculatorButtonItem.swift */,
+				F1F7681F2ACB0B47005C46EC /* CalculatorModel.swift */,
 				F17B9ACE2AC4543400EF77AD /* Assets.xcassets */,
 				F17B9AD02AC4543400EF77AD /* Preview Content */,
 			);
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F17B9ACD2AC4543200EF77AD /* ContentView.swift in Sources */,
+				F1F768202ACB0B47005C46EC /* CalculatorModel.swift in Sources */,
 				F17B9ACB2AC4543200EF77AD /* CalculatorApp.swift in Sources */,
 				F1F7681E2ACADB92005C46EC /* CalculatorBrain.swift in Sources */,
 				F17B9AD92AC4757B00EF77AD /* CalculatorButtonItem.swift in Sources */,
